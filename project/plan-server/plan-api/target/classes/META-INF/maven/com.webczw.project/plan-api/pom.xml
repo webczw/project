@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.webczw.project</groupId>
+    <groupId>${project-groupId}</groupId>
     <artifactId>plan-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${project-version}</version>
   </parent>
   <artifactId>plan-api</artifactId>
   <name>plan-api</name>
@@ -17,7 +17,6 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.webczw.project</groupId>
+	<groupId>${project-groupId}</groupId>
 	<artifactId>project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${project-version}</version>
 	<packaging>pom</packaging>
 
 	<name>project</name>
@@ -17,6 +17,8 @@
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project-groupId>com.webczw.project</project-groupId>
+		<project-version>0.0.1-SNAPSHOT</project-version>
 	</properties>
 
 	<modules>
