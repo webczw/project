@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,17 +34,18 @@ public class PlanController {
 	}
 	
 	@PostMapping("/")
-	public void create(PlanVO planVO) throws PlanBusinessException{
+	public void create(@RequestBody PlanVO planVO) throws PlanBusinessException{
 		planService.create(planVO);
 	}
 
-	@PutMapping("/")
-	public void update(PlanVO planVO) throws PlanBusinessException{
+	@PutMapping("/{planId}")
+	public void update(@PathVariable("planId") Long planId, @RequestBody PlanVO planVO) throws PlanBusinessException{
+		planVO.setPlanId(planId);
 		planService.update(planVO);
 	}
 	
-	@DeleteMapping("/")
-	public void delete(Long planId) throws PlanBusinessException{
+	@DeleteMapping("/{planId}")
+	public void delete(@PathVariable("planId") Long planId) throws PlanBusinessException{
 		planService.delete(planId);
 	}
 }
