@@ -7,9 +7,7 @@
     <artifactId>project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.webczw.project</groupId>
   <artifactId>plan-server</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>plan-server</name>
   <url>http://maven.apache.org</url>
   <properties>
