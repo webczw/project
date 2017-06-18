@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webczw.project.plan.api.dao.IPlanDao">
+	<resultMap type="com.webczw.project.plan.api.domain.PlanVO"
+		id="planResultMap">
+		<id column="plan_id" property="planId" />
+		<result column="plan_name" property="planName" />
+		<result column="plan_start_date" property="planStartDate" />
+		<result column="plan_end_date" property="planEndDate" />
+	</resultMap>
+
+	<select id="findList" resultMap="planResultMap">
+		select
+		plan_id,plan_name,plan_start_date,plan_end_date from new_db.plan_t
+	</select>
+
+	<select id="find" resultMap="planResultMap">
+		select
+		plan_id,plan_name,plan_start_date,plan_end_date from new_db.plan_t
+		where plan_id=#{0}
+	</select>
+
+	<insert id="create" parameterType="com.webczw.project.plan.api.domain.PlanVO">
+		<selectKey keyProperty="planId" resultType="java.lang.Long"
+			order="AFTER">
+			SELECT LAST_INSERT_ID() as planId
+		</selectKey>
+
+		insert into
+		new_db.plan_t(plan_id,plan_name,plan_start_date,plan_end_date)
+		values(#{planId}, #{planName}, #{planStartDate}, #{planEndDate})
+	</insert>
+
+	<update id="update" parameterType="com.webczw.project.plan.api.domain.PlanVO">
+		update new_db.plan_t set 
+		plan_name = #{planName}, 
+		plan_start_date = #{planStartDate}, 
+		plan_end_date = #{planEndDate}
+		where plan_id = #{planId};
+	</update>
+
+	<delete id="delete" parameterType="java.lang.Long">
+		delete from new_db.plan_t where plan_id = #{0};
+	</delete>
+
+</mapper>

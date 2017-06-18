@@ -21,4 +21,10 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>contract-api</module>
+  	<module>contract-impl</module>
+  	<module>contract-start</module>
+  </modules>
 </project>
