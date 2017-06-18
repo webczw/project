@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:1111/eureka
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/webczw/configs.git
+          searchPaths: project-config
+          username: webczw@163.com
+          password: gIthub123456
+  application:
+    name: config-server
