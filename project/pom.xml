@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>${project-groupId}</groupId>
@@ -13,7 +13,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,7 +26,8 @@
 		<module>zuul-server</module>
 		<module>plan-server</module>
 		<module>contract-server</module>
-	</modules>
+    <module>config-server</module>
+  </modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -55,12 +56,10 @@
 						</filter>
 					</filters>
 					<transformers>
-						<transformer
-							implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+						<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 							<resource>META-INF/spring.handlers</resource>
 						</transformer>
-						<transformer
-							implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+						<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 							<resource>META-INF/spring.schemas</resource>
 						</transformer>
 					</transformers>
