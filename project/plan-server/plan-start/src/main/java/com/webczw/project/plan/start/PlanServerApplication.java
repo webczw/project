@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +24,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableSwagger2
-@ComponentScan(basePackages={"com.webczw.project.plan.**.impl","com.webczw.project.plan.start.**.controller"})
+@ServletComponentScan
+@ComponentScan(basePackages={"com.webczw.project.plan.**.impl","com.webczw.project.plan.start.**.controller","com.webczw.project.plan.**.filter","com.webczw.project.plan.**.servlet","com.webczw.project.plan.**.config"})
 public class PlanServerApplication 
 {
     public static void main( String[] args )
