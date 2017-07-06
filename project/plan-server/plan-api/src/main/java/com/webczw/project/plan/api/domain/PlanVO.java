@@ -3,6 +3,8 @@ package com.webczw.project.plan.api.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class PlanVO implements Serializable {
 
 	/**
@@ -11,6 +13,7 @@ public class PlanVO implements Serializable {
 	private static final long serialVersionUID = -3462192041056227695L;
 	private Long planId;
 	private String planName;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date planStartDate;
 	private Date planEndDate;
 
