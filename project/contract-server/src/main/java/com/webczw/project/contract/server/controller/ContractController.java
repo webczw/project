@@ -1,4 +1,4 @@
-package com.webczw.project.contract.start.controller;
+package com.webczw.project.contract.server.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

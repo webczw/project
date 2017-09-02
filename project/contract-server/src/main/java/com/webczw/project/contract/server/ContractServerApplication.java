@@ -1,4 +1,4 @@
-package com.webczw.project.contract.start;
+package com.webczw.project.contract.server;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
