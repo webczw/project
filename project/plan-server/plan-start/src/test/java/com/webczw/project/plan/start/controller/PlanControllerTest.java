@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.UUID;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -58,7 +59,7 @@ public class PlanControllerTest {
 	@Test
 	public void testCreate() throws UnsupportedEncodingException, Exception {
 		PlanVO planVO = new PlanVO();
-		planVO.setPlanName("name010");
+		planVO.setPlanName("name010_"+UUID.randomUUID());
 		planVO.setPlanStartDate(new Date());
 		String requestJson = JSONObject.toJSONString(planVO);
         String responseString = mockMvc.perform( post("/plans/").contentType(MediaType.APPLICATION_JSON).content(requestJson)).andDo(print())
