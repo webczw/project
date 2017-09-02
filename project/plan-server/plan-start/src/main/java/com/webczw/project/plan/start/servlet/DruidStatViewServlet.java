@@ -15,5 +15,5 @@ import com.alibaba.druid.support.http.StatViewServlet;
     })
 public class DruidStatViewServlet extends StatViewServlet {
 
-
+//http://127.0.0.1:2222/root/druid/index.html
 }
