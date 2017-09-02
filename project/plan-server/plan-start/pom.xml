@@ -30,9 +30,9 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>${project-groupId}</groupId>
+			<groupId>com.webczw.project</groupId>
 			<artifactId>plan-impl</artifactId>
-			<version>${project-version}</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
 		<dependency>
