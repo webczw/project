@@ -4,7 +4,7 @@ import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.UUID;
@@ -52,8 +52,11 @@ public class PlanControllerTest {
 	}
 
 	@Test
-	public void testFind() {
+	public void testFind() throws UnsupportedEncodingException, Exception {
 		//fail("Not yet implemented");
+		String responseString = mockMvc.perform(get("/plans/10")).andDo(print())
+        .andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
+		System.out.println(responseString);
 	}
 
 	@Test
